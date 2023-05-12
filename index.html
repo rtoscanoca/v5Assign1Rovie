@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MuBasic Clone</title>
+    <link type="text/css" rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <main class="col2">
+      <div class="left">
+        <header>
+          <h2>mubasic</h2>
+          <img height="100%" src="images/mubasiclogo.svg" />
+        </header>
+        <div class="middle">
+          The <span>#1</span> <br />
+          source for<br />
+          children's <br />
+          music.
+        </div>
+        <footer>
+          An ever-growing catalogue of <br />
+          high-quality children’s music,<br />
+          sourced by talented music<br />
+          creators from all over the world.
+        </footer>
+      </div>
+      <audio
+        id="key_M"
+        style="display: none"
+        src="audio/audio1- 5_11_23, 7.46 PM.m4a"
+        controls
+      ></audio>
+      <audio
+        id="key_B"
+        style="display: none"
+        src="audio/audio2- 5_11_23, 7.51 PM.m4a"
+        controls
+      ></audio>
+      <audio
+        id="key_A"
+        style="display: none"
+        src="audio/audio3- 5_11_23, 8.03 PM.m4a"
+        controls
+      ></audio>
+      <audio
+        id="key_I"
+        style="display: none"
+        src="audio/audio4- 5_11_23, 8.05 PM.m4a"
+        controls
+      ></audio>
+      <audio
+        id="key_C"
+        style="display: none"
+        src="audio/audio5 - 5_11_23, 8.10 PM.m4a"
+        controls
+      ></audio>
+      <audio
+        id="key_U"
+        style="display: none"
+        src="audio/audio6- 5_11_23, 8.12 PM.m4a"
+        controls
+      ></audio>
+      <audio
+        id="key_S"
+        style="display: none"
+        src="audio/audio7 - 5_11_23, 7.59 PM.m4a"
+        controls
+      ></audio>
+
+      <div class="right">
+        <div class="piano">
+          <div class="bottom-keys">
+            <div class="key" id="M">
+              <div>M</div>
+            </div>
+            <div class="key" id="B">
+              <div>B</div>
+            </div>
+            <div class="key" id="A">
+              <div>A</div>
+            </div>
+            <div class="key" id="I">
+              <div>I</div>
+            </div>
+            <div class="key" id="C">
+              <div>C</div>
+            </div>
+          </div>
+          <div class="top-keys" >
+            <div class="key" id="U">
+              <div>U</div>
+            </div>
+            <div class="key" id="S">
+              <div>S</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      
+      let keys = document.querySelectorAll(".key");
+
+      keys.forEach(key =>{
+        key.addEventListener("click", ()=>{
+          playsound(key.id);
+        })
+      })
+
+      const playsound = (id) => {
+        let sound = document.getElementById("key_" + id)
+        sound.currentTime = 0;
+        sound.play();
+      }
+
+    </script>
+  </body>
+</html>
